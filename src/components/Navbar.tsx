@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className="shadow-xl w-full flex items-center justify-between pl-20 pr-20 fixed">
+    <div className="shadow-xl w-full flex items-center justify-between pl-20 pr-20 ">
       <div className="w-20 h-20">
         <Link to={"/"}>
           {" "}
