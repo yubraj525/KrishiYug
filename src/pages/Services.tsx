@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard'
 
 const Services = () => {
   return (
-   <ProductCard/>
+   <ProductCard name="heroshoe" description={"here you can do something"} price={"76$"}/>
   )
 }
 
