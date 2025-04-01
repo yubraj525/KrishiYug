@@ -25,7 +25,7 @@ const Home = () => {
 
       <div className=" h-200 space-y-2.5 flex flex-col items-center p-5 ">
         <h1 className="font-bold text-3xl   underline">Our Products</h1>
-        <div className="grid  grid-cols-5 gap-2 ">
+        <div className="grid  grid-cols-6 gap-5">
           <ProductCard
             name="heroshoe"
             description={"here you can do something"}
@@ -66,7 +66,7 @@ const Home = () => {
       <div className="  w-full h-full space-y-2.5 bg-gray-100  p-5">
         <h1 className="font-bold text-3xl   text-center underline">About Us</h1>
         <div className="flex items-center  justify-center mt-5">
-          <div className="grid grid-flow-row grid-cols-3 gap-25 w-fulls">
+          <div className="flex  flex-row justify-between    w-7xl">
             <Team />
             <Team />
             <Team />

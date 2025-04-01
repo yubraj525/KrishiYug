@@ -3,7 +3,7 @@ import Herosection from "../components/Herosection";
 
 const ContactUs = () => {
   return (
-    <div className="space-y-2.5 p-10 bg-gray-100 flex flex-col items-center justify-center ">
+    <div className="space-y-2.5  bg-gray-100 flex flex-col items-center justify-center ">
       <Herosection
         small="Feel free to reach us!! "
         header={"Contact For KrishiYug"}
@@ -11,9 +11,9 @@ const ContactUs = () => {
           "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dolores quasi, officiis doloremque sequi numquam ullam. Beatae, excepturi! Aliquam totam blanditiis labore veniam"
         }
       />
-      <div className=" h-55 w-300 space-y-5 mt-4 mb-4">
-        <h1 className="text-3xl font-bold "> Our Offices</h1>
-        <div className=" w-300 h-25 grid grid-flow-row grid-cols-4 gap-4 ">
+      <div className="  w-full space-y-10  bg-white p-15">
+        <h1 className="text-5xl font-bold text-center "> Our Offices</h1>
+        <div className=" w-full  h-25 grid grid-flow-row grid-cols-4  place-items-center">
           <div className=" border-l-2 p-2 space-y-2">
             <h1 className="font-bold text-2xl"> Itahari</h1>
             <p>
@@ -44,34 +44,19 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-      <div className="w-300 space-y-4 mt-4 mb-4">
-        <h1 className="font-bold text-3xl">Our Team</h1>
-        <div className="  grid grid-flow-col gap-10">
-          <div className="h-40 w-70  bg-gray-100 border-2 p-5 rounded-2xl">
-            <p>Our CEO</p>
-          </div>
-          <div className="h-40 w-70  bg-gray-100  border-2 p-5 rounded-2xl">
-            <p>Branch Manager</p>
-          </div>
-          <div className="h-40 w-70 bg-gray-100  border-2 p-5 rounded-2xl">
-            <p>Executive Member</p>
-          </div>
-          <div className="h-40 w-70  bg-gray-100  border-2 p-5 rounded-2xl">
-            <p>Member</p>
-          </div>
-        </div>
-      </div>
+      
 
-      <div className="bg-amber-50 h-screen w-screen flex flex-row items-center">
+      <div className="bg-amber-50 h-200 w-screen flex flex-row items-center">
         <div className="h-full w-1/3 p-15 flex items-center justify-center">
           {" "}
-          <div className=" ">
+          <div className=" w-1/2">
             {" "}
             <h1 className="fond-bold text-3xl">Contact us</h1>
             <p>Here you can fill up the form</p>
           </div>
-        </div>
-        <div className="p-15 border-l-2" >
+        </div >
+        <div className=" w-1/2 h-full p-15 border-l-2  bg-gray-100" >
+        <p>Here you can fill up the form</p>
           <form className="space-y-3">
             <label htmlFor="uname">Name:</label>
             <br></br>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const Herosection = ({small,header,par}) => {
   return (
-    <div className='space-y-2.5 p-10 bg-gray-100 flex flex-col items-center justify-center '>
+    <div className='space-y-2.5 p-10 bg-gray-100 flex flex-col items-center justify-center overflow-hidden '>
     <div className='h-100 space-y-2.5 bg-gray-100 flex flex-col items-center justify-center p-25'>
        <div className='text-center space-y-2'>
          <h4 className='text-xl text-blue-500'>

@@ -34,6 +34,10 @@ const Navbar = () => {
             {" "}
             <li> Our Services</li>
           </Link>
+          <Link to={"blogs"}>
+            {" "}
+            <li> Blogs</li>
+          </Link>
         </ul>
       </div>
       <div className="flex items-center flex-row  justify-center gap-5">
