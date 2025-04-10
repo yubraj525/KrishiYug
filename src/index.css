@@ -1,7 +1,9 @@
+
+
 @import "tailwindcss";
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
-.input{
+input{
     
 @apply border-b-2 border-black w-full outline-none
 }

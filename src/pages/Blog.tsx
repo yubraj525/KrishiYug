@@ -1,8 +1,10 @@
 import React from 'react'
 import BlogCard from '../components/BlogCard'
+import LoginPage from '../components/LoginPage'
 
 const Blog = () => {
   return (
+    <>
  
       <div className='grid gap-y-10 grid-cols-3 gap-5  place-items-center'>
       <BlogCard/>
@@ -12,6 +14,9 @@ const Blog = () => {
       <BlogCard/>
       <BlogCard/>
   </div>
+ 
+  </>
+
   )
 }
 

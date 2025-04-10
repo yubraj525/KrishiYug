@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import { Link } from "react-router";
+import LoginPage from "./LoginPage";
 
 const Navbar = () => {
   return (
@@ -42,10 +43,11 @@ const Navbar = () => {
       </div>
       <div className="flex items-center flex-row  justify-center gap-5">
         <Button  btnName="Sign Up" />
-        <Link to={"login"}>
+     
           {" "}
-          <h2 className="font-bold">Login</h2>
-        </Link>
+          <Button  btnName="Login" />
+        
+    
       </div>
     </div>
   );
