@@ -1,6 +1,7 @@
 import React from "react";
 import Herosection from "../components/Herosection";
 import ContactForm from "../components/ContactForm";
+import LoginPage from "../components/LoginPage";
 
 const ContactUs = () => {
   return (
@@ -52,6 +53,7 @@ const ContactUs = () => {
     <ContactForm/>
   </div>
 </div>
+
     </div>
   );
 };
