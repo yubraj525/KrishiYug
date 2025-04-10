@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import ContactUs from './pages/ContactUs';
 import Services from './pages/Services';
 import LoginPage from './pages/LoginPage';
+import Blog from './pages/Blog';
 
 const Route = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ const Route = createBrowserRouter([
       { path: "about", element: <AboutPage /> },
       { path: "contact", element: <ContactUs/> }, 
       { path: "service", element: <Services/> },// Fix: Added missing `/>`
+      { path: "blogs", element: <Blog/> },// Fix: Added missing `/>`
     ],
   },
   {path:"/login", element:<LoginPage/>}
