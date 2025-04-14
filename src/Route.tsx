@@ -6,8 +6,10 @@ import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import ContactUs from './pages/ContactUs';
 import Services from './pages/Services';
-// import LoginPage from './pages/LoginPage';
+
 import Blog from './pages/Blog';
+import ProductPage from './pages/ProductPage';
+import LoginPage from './components/LoginPage';
 
 const Route = createBrowserRouter([
   {
@@ -19,9 +21,10 @@ const Route = createBrowserRouter([
       { path: "contact", element: <ContactUs/> }, 
       { path: "service", element: <Services/> },// Fix: Added missing `/>`
       { path: "blogs", element: <Blog/> },// Fix: Added missing `/>`
+      { path: "products", element: <ProductPage/> },// Fix: Added missing `/>`
     ],
   },
-  // {path:"/login", element:<LoginPage/>}
+  {path:"login", element:<LoginPage/>}
 ]);
 
 export default Route
