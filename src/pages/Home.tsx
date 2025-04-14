@@ -13,7 +13,7 @@ const Home = () => {
   };
   return (
     <>
-      <div className=" relative h-150 space-y-2.5 bg-gray-100 flex flex-col items-center justify-center">
+      <div className="  h-150 space-y-2.5 bg-gray-100 flex flex-col items-center justify-center">
 
         <h1 className=" font-bold text-3xl">Discover your skills!!</h1>
         <p>
@@ -25,10 +25,15 @@ const Home = () => {
           </button>
         </Link>
       </div>
-
-      <div className=" h-200 space-y-2.5 flex flex-col items-center p-5 ">
-        <h1 className="font-bold text-3xl   underline">Our Products</h1>
-        <div className="grid  grid-cols-6 md:grid-cols-4 gap-5">
+<div className=" flex items-center justify-between pl-15 pr-25 m-4  ">
+<h1 className="font-bold text-3xl   underline">Our Products</h1>
+<Link to={"products"}>
+<button className=" p-2  cursor-pointer underline">view more</button>
+</Link>
+</div>
+      <div className="  space-y-2.5 items-center justify-center flex  p-5 ">
+      
+        <div className="w-full grid place-items-center  grid-cols-5 ">
           <ProductCard
             name="heroshoe"
             description={"here you can do something"}
@@ -54,20 +59,16 @@ const Home = () => {
             description={"here you can do something"}
             price={"76$"}
           />
-          <ProductCard
-            name="heroshoe"
-            description={"here you can do something"}
-            price={"76$"}
-          />
-          <ProductCard
-            name="heroshoe"
-            description={"here you can do something"}
-            price={"76$"}
-          />
+       
+       
         </div>
       </div>
-      <div className="  w-full h-full space-y-2.5 bg-gray-100  p-5">
-        <h1 className="font-bold text-3xl   text-center underline">About Us</h1>
+      <div className="  w-full h-full space-y-2.5 bg-gray-100  p-5 flex items-center flex-col">
+       <div className="w-130 flex flex-col gap-5">
+       <h1 className="font-bold text-3xl   text-center underline">About Us</h1>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quasi suscipit ab, necessitatibus non cupiditate dolores voluptate dolore minus harum!</p>
+       <button className=" p-2  cursor-pointer underline text-blue-400">view more</button>
+       </div>
         <div className="flex items-center  justify-center mt-5">
           <div className="flex  flex-row justify-between    w-7xl">
             <Team />

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "./Button";
 import { Link } from "react-router";
 import LoginPage from "./LoginPage";
 
+
 const Navbar = () => {
+  const [login,setLogin]=useState(false);
   return (
     <div className="shadow-xl w-full flex items-center justify-between pl-20 pr-20 ">
       <div className="w-20 h-20">
@@ -18,34 +20,62 @@ const Navbar = () => {
       </div>
       <div>
         <ul className="flex items-center flex-row  justify-center gap-15">
-          <Link to={"/"}>
-            {" "}
-            <li>Home</li>
-          </Link>
+        <li className="group relative list-none">
+    <Link to="/" className="cursor-pointer">
+      Home
+    </Link>
+    <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
+  </li>
+            {/* hover:before:content-['']  */}
+            <li  className="group relative list-none">
           <Link to={"about"}>
             {" "}
-            {/* hover:before:content-['']  */}
-            <li className=" ">About Us</li>{" "}
+              About Us
+
           </Link>
+              <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
+
+              </li>{" "}
+            <li  className="group relative list-none">
           <Link to={"contact"}>
             {" "}
-            <li>Contact Us</li>
+              Contact Us
+              
           </Link>{" "}
+              <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
+              </li>
+            <li  className="group relative list-none">
           <Link to={"service"}>
             {" "}
-            <li> Our Services</li>
+               Our Services
           </Link>
+               <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
+
+               </li>
+            <li  className="group relative list-none"> 
           <Link to={"blogs"}>
             {" "}
-            <li> Blogs</li>
+              Blogs
           </Link>
+              <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
+
+              </li>
         </ul>
       </div>
       <div className="flex items-center flex-row  justify-center gap-5">
         <Button  btnName="Sign Up" />
      
           {" "}
-          <Button  btnName="Login" />
+    
+          <div>
+      <button
+
+        onClick={() => setLogin(true)} // Corrected event handler name
+      >Login</button>
+      
+      {login && <LoginPage />} {/* Conditionally render Loginpage based on login state */}
+    </div>
+
         
     
       </div>
