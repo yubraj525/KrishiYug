@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./Button";
 import { Link } from "react-router";
 import LoginPage from "./LoginPage";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div>
-        <ul className="flex items-center flex-row  justify-center gap-15">
+        <ul className=" w-full flex items-center flex-row  justify-center gap-15">
         <li className="group relative list-none">
     <Link to="/" className="cursor-pointer">
       Home
@@ -62,18 +63,19 @@ const Navbar = () => {
               </li>
         </ul>
       </div>
-      <div className="flex items-center flex-row  justify-center gap-5">
+      <div className="flex items-center flex-row  justify-end gap-5">
         <Button  btnName="Sign Up" />
      
           {" "}
     
-          <div>
-      <button
+          <div className="flex items-center gap-3">
+      <button className="cursor-pointer"
 
         onClick={() => setLogin(true)} // Corrected event handler name
-      >Login</button>
+      >Login </button>
+      <FaLongArrowAltRight />
       
-      {login && <LoginPage />} {/* Conditionally render Loginpage based on login state */}
+      {login && <LoginPage onclose={()=>setLogin(false)} />} {/* Conditionally render Loginpage based on login state */}
     </div>
 
         
