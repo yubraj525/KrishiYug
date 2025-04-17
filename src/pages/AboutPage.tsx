@@ -4,8 +4,8 @@ import Team from "../components/Team";
 const Feedback=()=>{
   return(
    <>
-     <div className="  flex flex-col w-120 bg-white  rounded-xl shadow-2xl p-15 gap-5 ">
-      <div className="flex items-center w-full h-15 gap-5">
+     <div className="  flex flex-col w-110  bg-white  rounded-xl shadow-2xl p-5 gap-5 ">
+      <div className="flex items-center w-full  gap-5">
         <div className="w-20 h-20">
           <img
             className="bg-white w-full h-full rounded-full"
@@ -35,16 +35,17 @@ const Feedback=()=>{
 const AboutPage = () => {
  
   return (
+    <>
     <div className="h-full space-y-2.5 bg-gray-100 ">
       <Herosection
         small="What and Why we are Here??"
         header="About KrishiYug"
         par="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure dolores quasi, officiis doloremque sequi numquam ullam. Beatae, excepturi! Aliquam totam blanditiis labore veniam
-     "
-      />
+        "
+        />
       <div className="h-150 space-y-2.5 bg-white flex flex-col items-center justify-center ">
         <div className="w-full space-y-4 mt-4 mb-4">
-          <h1 className="font-bold text-5xl text-center">Our Team</h1>
+          <h1 className="font-bold text-3xl text-center">Our Team</h1>
           <div className=" w-full grid grid-flow-col  place-items-center ">
             <Team />
             <Team />
@@ -52,8 +53,20 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-   <Feedback/>
     </div>
+    
+<div className="bg-gray-100 space-y-5 p-5 w-full ">
+<h1 className="font-bold text-3xl text-center ">What our customer Says</h1>
+<div className="grid grid-cols-4 gap-5 ">
+<Feedback/>
+<Feedback/>
+<Feedback/>
+<Feedback/>
+
+</div>
+</div>
+  
+        </>
   );
 };
 
