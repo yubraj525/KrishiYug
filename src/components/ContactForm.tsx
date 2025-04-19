@@ -26,7 +26,7 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white shadow-md rounded">
+    <form onSubmit={handleSubmit} className="w-200 p-4 bg-white shadow-md rounded">
       <h2 className="text-xl font-bold mb-4">User Information Form</h2>
 
       {/* Name */}
@@ -134,7 +134,7 @@ function ContactForm() {
     <label><input type="checkbox" name="roles" value="Farmer" onChange={handleChange} /> Farmer</label>
     <label><input type="checkbox" name="roles" value="Entrepreneur" onChange={handleChange} /> Entrepreneur</label>
     <label><input type="checkbox" name="roles" value="Home Gardener" onChange={handleChange} /> Home Gardener</label>
-    <label><input type="checkbox" name="roles" value="Processor" onChange={handleChange} /> Processor</label>
+    <label><input type="checkbox" name="roles" value="Processor" onChange={handleChange} /> Consumer</label>
   </div>
 </div>
 

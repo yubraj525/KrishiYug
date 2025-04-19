@@ -37,7 +37,7 @@ const Home = () => {
        <div className="  w-full  bg-red-400 h-120  overflow-hidden  mx-auto  rounded shadow-lg flex items-center justify-center pb-15">
          
      <div className="w-full  relative">
-     <div className="absolute bg-black/60 size-full "/>
+     <div className="absolute bg-black/50 size-full "/>
      <div className="  absolute inset-0 z-10 space-y-2.5 bg-transparent text-white backdrop-blur-1 flex flex-col items-center justify-center p-5 backdrop-blur-5">
       <div className="backdrop-blur-15 p-5 rounded-2xl flex items-center justify-center">
     <div className="flex items-center justify-center flex-col">

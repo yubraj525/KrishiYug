@@ -7,8 +7,8 @@ import { Link } from 'react-router'
 const Footer = () => {
   return (
     <>
-        <div className="  w-full space-y-2.5   p-5 flex items-center flex-col">
-        <div className="w-1/2 flex flex-col gap-5">
+        <div className="  space-y-2.5    flex  flex-col items-center m-15 ">
+        <div className=" flex flex-col gap-5">
           <h1 className="font-bold text-3xl  text-center underline">
       Join Us Now
           </h1>

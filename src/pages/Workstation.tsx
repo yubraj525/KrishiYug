@@ -50,6 +50,40 @@ const Workstation = () => {
         ))}
       </div>
     </div>
+
+{/* abou company */}
+
+<div className='w-full h-100  flex gap-5 items-center justify-center p-5'>
+      <div className='w-1/2 h-full overflow-hidden ' >
+      <img className="size-full object-contain" src="src\assets\videos\aboutpic-1.jpeg"></img>
+      </div>
+      <div className='w-1/2 h-full space-y-2 flex flex-col justify-center p-10 items-center '>
+      <h1 className='text-5xl font-bold'>Absolute performance</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum in quo suscipit voluptatum tempore similique architecto fuga distinctio? Accusamus, delectus.</p></div>
+    </div>
+
+    
+    <div className='w-full h-100   flex flex-row-reverse
+     gap-5 items-center justify-center   p-5'>
+      <div className='w-1/2 h-full overflow-hidden' >
+      <img className="size-full object-contain" src="src\assets\videos\aboutpic-2.jpeg"></img>
+      </div>
+      <div className='w-1/2 h-full space-y-2 flex flex-col justify-center p-10 items-center '>
+      <h1 className='text-5xl font-bold'>Absolute performance</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum in quo suscipit voluptatum tempore similique architecto fuga distinctio? Accusamus, delectus.</p></div>
+    </div>
+
+
+
+    <div className='w-full h-100   flex gap-5 items-center justify-center   p-5'>
+      <div className='w-1/2 h-full overflow-hidden' >
+      <img className="size-full object-contain" src="src\assets\videos\aboutpic-3.jpeg"></img>
+      </div>
+      <div className='w-1/2 h-full space-y-2 flex flex-col justify-center p-10 items-center '>
+      <h1 className='text-5xl font-bold'>Absolute performance</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum in quo suscipit voluptatum tempore similique architecto fuga distinctio? Accusamus, delectus.</p></div>
+    </div>
+
    </>
   )
 }
