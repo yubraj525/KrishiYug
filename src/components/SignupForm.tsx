@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import Button from './Button'
 import { IoClose } from 'react-icons/io5';
+import { CiUser } from 'react-icons/ci';
 
 
 // const SignupForm = () => {
@@ -26,18 +27,19 @@ const SignupForm = ({ onclose }) => {
         className="fixed inset-0 bg-opacity-50 backdrop-blur-2xl flex justify-center items-center z-50"
         >
       <div className="relative">
+      
+
+        <form className="relative w-[350px] p-6 rounded-lg shadow-lg bg-gray-100 bg-opacity-50 flex flex-col gap-4">
         <button
           onClick={(e) => {
               e.stopPropagation(); // don't bubble up to modal
               onclose();
             }}
-            className="absolute top-20 z-10 right-0 text-xl border-2 rounded-full cursor-pointer"
+            className="absolute top-25  z-10 right-0 text-xl border-2 rounded-full cursor-pointer"
             >
           <IoClose />
         </button>
-
-        <form className="relative w-[350px] p-6 rounded-lg shadow-lg bg-gray-100 bg-opacity-50 flex flex-col gap-4">
-          <h1 className="text-3xl font-bold text-center">Sign Up</h1>
+          <h1 className="text-8xl font-bold text-center"><CiUser /></h1>
 
           <div>
             <label htmlFor="name" className="block font-medium ml-2 text-gray-700">Name</label>
@@ -79,7 +81,7 @@ const SignupForm = ({ onclose }) => {
               />
           </div>
 
-          <Button btnName="Register" />
+          <Button>register</Button>
         </form>
       </div>
     </div>

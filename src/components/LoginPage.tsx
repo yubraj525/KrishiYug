@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Button from './Button';
 import { IoClose } from 'react-icons/io5';
+import { CiUser } from 'react-icons/ci';
 
 const LoginPage = ({ onclose }) => {
   const modal = useRef(null);
@@ -37,17 +38,18 @@ const LoginPage = ({ onclose }) => {
             e.stopPropagation();
             onclose();
           }}
-          className="absolute top-20 z-10 right-0 text-xl border-2 rounded-full cursor-pointer"
+          className="absolute top-23 z-10 right-2 text-xl border-2 rounded-full cursor-pointer"
         >
           <IoClose />
         </button>
-
+          {/* login form box */}
         <form
           onSubmit={handleSubmit}
           className="relative w-100 h-150 p-6 rounded-lg shadow-lg mx-auto mt-20 flex flex-col justify-evenly bg-gray-100 bg-opacity-50"
         >
           <div className="self-center">
-            <h1 className="font-bold text-3xl">Login Form</h1>
+ 
+            <h1 className='text-5xl font bold'><CiUser /></h1>
           </div>
 
           <div>

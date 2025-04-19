@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import LoginPage from "./LoginPage";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import SignUpPage from "./SignUpPage";
@@ -8,6 +8,16 @@ import Button from "./Button";
 const Navbar = () => {
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const navLinks = [
+    { to: '/', label: 'Home' },
+    { to: '/about', label: 'About Us' },
+    { to: '/contact', label: 'Contact Us' },
+    { to: '/service', label: 'Our Services' },
+    { to: '/blogs', label: 'Blogs' },
+  ];
   return (
     <div className="shadow-xl w-full flex items-center justify-between pl-20 pr-20 ">
       <div className="w-20 h-15">
@@ -21,35 +31,28 @@ const Navbar = () => {
         </Link>
       </div>
       <div>
-        <ul className=" w-full flex items-center flex-row  justify-center gap-15">
-          <li className="group relative list-none">
-            <Link to="/" className="cursor-pointer">
-              Home
+      <ul className="w-full flex items-center flex-row justify-center gap-15">
+      {navLinks.map(({ to, label }) => {
+        const isActive = currentPath === to;
+
+        return (
+          <li key={to} className="group relative list-none">
+            <Link to={to} className="cursor-pointer">
+              {label}
             </Link>
-            <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
+            <p
+              className={`absolute left-0 -bottom-1 h-[2px] bg-black transition-all duration-300 ${
+                isActive ? 'w-full' : 'w-0 group-hover:w-full'
+              }`}
+            ></p>
           </li>
-          {/* hover:before:content-['']  */}
-          <li className="group relative list-none">
-            <Link to={"about"}> About Us</Link>
-            <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
-          </li>{" "}
-          <li className="group relative list-none">
-            <Link to={"contact"}> Contact Us</Link>{" "}
-            <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
-          </li>
-          <li className="group relative list-none">
-            <Link to={"service"}> Our Services</Link>
-            <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
-          </li>
-          <li className="group relative list-none">
-            <Link to={"blogs"}> Blogs</Link>
-            <p className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></p>
-          </li>
-        </ul>
+        );
+      })}
+    </ul>
       </div>
       <div className="flex items-center flex-row  justify-end gap-5">
-        <Button>
-          hello
+        <Button onClick={()=>setSignup(true)}>
+    Sign Up
         </Button>
         {signup && <SignUpPage onclose={() => setSignup(false)} />}
 
