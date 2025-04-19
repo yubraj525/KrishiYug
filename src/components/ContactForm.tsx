@@ -1,85 +1,150 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const ContactForm = () => {
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    qualification: "",
+    gender: "",
+    roles:"",
+    opinion: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData); // Or handle submission as needed
+    alert("Form submitted!");
+  };
+
   return (
-    <form className="space-y-10">
-    <label htmlFor="uname">Name:</label>
-    <br></br>
-    <input
-      className="input"
-      type="text"
-      name="fname"
-      placeholder="Enter your name here."
-    ></input>
-    <br />
-    <label htmlFor="address">Address:</label>
-    <br></br>
-    <input
-      className="input"
-      type="text"
-      name="address"
-      placeholder="Your address here."
-    ></input>
-    <br />
-    <label htmlFor="email">Email:</label>
-    <br></br>
-    <input
-      className="input"
-      type="email"
-      name="email"
-      placeholder="Your email here."
-    ></input>
-    <br />
-    <label>choose your profession:</label> <br />
-    <div className="space-x-2">
-      <input type="checkbox" name="profes1" value={"farmer"}></input>
-      <label htmlFor="profes1">Farmer</label>
-      <input type="checkbox" name="profes2" value={"consumer"}></input>
-      <label htmlFor="profes2">Consumer</label>
-      <input
-        type="checkbox"
-        name="profes3"
-        value={"enterpurner"}
-      ></input>
-      <label htmlFor="profes3">Enterpurner</label>
-      <input type="checkbox" name="profes4" value={"grocessor"}></input>
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 bg-white shadow-md rounded">
+      <h2 className="text-xl font-bold mb-4">User Information Form</h2>
 
-      <label htmlFor="profes4">Grocessor</label>
-      <input type="checkbox" name="profes5" value={"other"}></input>
-      <label htmlFor="profes5">Other</label>
-    </div>
-    <br />
-    <label className="mr-5"> Gender:</label>
-    <label className="radio" htmlFor="gender">Male</label>
-    <input type="radio" name="gender" value="male" />
-    <label className="radio" htmlFor="gender">female</label>
-    <input  type="radio" name="gender" value="female" />
-    <br />
-    <label>Your Qualification:</label>
-    <select  name="qualification" className=" radio-select ml-2 border-2 rounded-xl ">
-      <option value="SLC">SLC</option>
-      <option value="+2">+2 passed</option>
-      <option value="Bachelor">bachelor</option>
-      <option value="EQ- Bachlore">Eq-Bachelor</option>
-      <option value="SEE">SEE</option>
-      <option value="Uneducated">illeterate</option>
-    </select>
-    <br />
-    <label>Description</label>
-    <br />
-    <textarea
-      className="border-1 border-blac mt-2 w-full"
-      placeholder="here your brief"
-    ></textarea>
-    <center>
-      {" "}
-      <input
-        className="border-1 w-20 p-2 rounded-2xl text-white bg-blue-400"
-        type="submit"
-      ></input>
-    </center>
-  </form>
-  )
+      {/* Name */}
+      <div className="mb-4">
+        <label className="block mb-1">Name:</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full border px-3 py-2 rounded"
+          required
+        />
+      </div>
+
+      {/* Email */}
+      <div className="mb-4">
+        <label className="block mb-1">Email:</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full border px-3 py-2 rounded"
+          required
+        />
+      </div>
+
+      {/* Contact */}
+      <div className="mb-4">
+        <label className="block mb-1">Contact:</label>
+        <input
+          type="tel"
+          name="contact"
+          value={formData.contact}
+          onChange={handleChange}
+          className="w-full border px-3 py-2 rounded"
+          required
+        />
+      </div>
+
+      {/* Qualification */}
+      <div className="mb-4">
+        <label className="block mb-1">Qualification:</label>
+        <select
+          name="qualification"
+          value={formData.qualification}
+          onChange={handleChange}
+          className="w-full border px-3 py-2 rounded"
+          required
+        >
+          <option value="">-- Select Qualification --</option>
+          <option value="Bachelor">Bachelor</option>
+          <option value="+2">+2</option>
+          <option value="SLC">SLC</option>
+          <option value="+2 Equivalent">+2 Equivalent</option>
+        </select>
+      </div>
+
+      {/* Gender */}
+      <div className="mb-4">
+        <label className="block mb-1">Gender:</label>
+        <div className="flex gap-4">
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              value="Male"
+              checked={formData.gender === "Male"}
+              onChange={handleChange}
+              required
+            />{" "}
+            Male
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="gender"
+              value="Female"
+              checked={formData.gender === "Female"}
+              onChange={handleChange}
+              required
+            />{" "}
+            Female
+          </label>
+        </div>
+      </div>
+
+      {/* Opinion */}
+      <div className="mb-4">
+        <label className="block mb-1">Your Opinion:</label>
+        <textarea
+          name="opinion"
+          value={formData.opinion}
+          onChange={handleChange}
+          rows={4}
+          className="w-full border px-3 py-2 rounded"
+          required
+        ></textarea>
+      </div>
+      {/* preofession */}
+      <div className="mb-4">
+  <label className="block mb-1">You are (check all that apply):</label>
+  <div className="checkbox-inline inline-flex">
+    <label><input type="checkbox" name="roles" value="Farmer" onChange={handleChange} /> Farmer</label>
+    <label><input type="checkbox" name="roles" value="Entrepreneur" onChange={handleChange} /> Entrepreneur</label>
+    <label><input type="checkbox" name="roles" value="Home Gardener" onChange={handleChange} /> Home Gardener</label>
+    <label><input type="checkbox" name="roles" value="Processor" onChange={handleChange} /> Processor</label>
+  </div>
+</div>
+
+
+      {/* Submit Button */}
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Submit
+      </button>
+    </form>
+  );
 }
 
-export default ContactForm
+export default ContactForm;
