@@ -3,14 +3,37 @@ import axios from "axios";
 import { Link } from "react-router";
 import ProductCard from "../components/ProductCard";
 import Team from "../components/Team";
-import LoginPage from "../components/LoginPage";
+// import LoginPage from "../components/LoginPage";
 
-const Home = () => {
-  const [products, setProducts] = useState("");
-  const fetchProduct = async (req, res) => {
-    const respond = await axios.get("");
-   
-  };
+
+// declaration of structure  as we are using ts
+interface veggies {
+  id: number;
+  name: string;
+  price: number;
+  categoryId: number;
+  stock: number;
+  description: string;
+  image?: string;
+}
+
+const Home: React.FC= () => {
+  //  as we have describe what data are coming in usestate 
+  const [veggies, setVeggies] = useState<veggies[]>([]);   
+     const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/vegetables')
+      .then(response => {
+        setVeggies(response.data);  // Store the vegetable data
+        setLoading(false);  // Set loading to false once the data is fetched
+      })
+      .catch(error => {
+        console.error("There was an error fetching vegetables:", error);
+        setLoading(false);
+      });
+  }, []);  // Empty array means this runs only once when the component mounts
+
   const images = [
     "https://plus.unsplash.com/premium_photo-1678655636569-b2786b3c9ac3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
    "https://media.istockphoto.com/id/1249522339/photo/tractor-spray-fertilizer-on-green-field.jpg?s=1024x1024&w=is&k=20&c=i5dKxezXxtgmLZ57juYCe8H7ZZ4w_o1M3HrY0WI_n_Q=",
@@ -89,7 +112,18 @@ const Home = () => {
       </div>
       <div className="  space-y-2.5 items-center justify-center flex  p-5 ">
         <div className="w-full grid place-items-center  grid-cols-5 ">
-          <ProductCard
+          
+        {veggies.slice(0, 5).map((veg) => (
+  <ProductCard
+    key={veg.id}
+    name={veg.name}
+    description={veg.description}
+    price={veg.price}
+    image={veg.image}
+
+  />
+))}
+          {/* <ProductCard
             name="heroshoe"
             description={"here you can do something"}
             price={"76$"}
@@ -113,7 +147,7 @@ const Home = () => {
             name="heroshoe"
             description={"here you can do something"}
             price={"76$"}
-          />
+          /> */}
         </div>
       </div>
 
@@ -137,7 +171,7 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full grid place-items-center  grid-cols-5 p-5 ">
-        <ProductCard
+        {/* <ProductCard
           name="heroshoe"
           description={"here you can do something"}
           price={"76$"}
@@ -161,7 +195,7 @@ const Home = () => {
           name="heroshoe"
           description={"here you can do something"}
           price={"76$"}
-        />
+        /> */}
       </div>
       <div className="  w-full h-full space-y-2.5 bg-gray-100  p-5 flex items-center flex-col">
         <div className="w-1/2 flex flex-col gap-5">

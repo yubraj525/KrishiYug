@@ -1,8 +1,7 @@
 
 
 @import "tailwindcss";
-@plugin "flowbite-react/plugin/tailwindcss";
-@source "../.flowbite-react/class-list.json";
+
 .group{
     @apply w-25 h-5 flex items-center justify-center
 }

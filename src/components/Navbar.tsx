@@ -17,6 +17,7 @@ const Navbar = () => {
     { to: '/contact', label: 'Contact Us' },
     { to: '/service', label: 'Our Services' },
     { to: '/blogs', label: 'Blogs' },
+  
   ];
   return (
     <div className="shadow-xl w-full flex items-center justify-between pl-20 pr-20 ">

@@ -1,0 +1,24 @@
+{
+    "categories": [
+      { "id": 1, "name": "Leafy Greens" },
+      { "id": 2, "name": "Root Vegetables" },
+      { "id": 3, "name": "Fruits" }
+    ],
+    "vegetables": [
+      { "id": 1, "name": "Spinach", "price": 20, "categoryId": 1, "stock": 50 , "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" ,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
+      { "id": 2, "name": "Lettuce", "price": 25, "categoryId": 1, "stock": 30 ,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
+      { "id": 3, "name": "Carrot", "price": 15, "categoryId": 2, "stock": 100 ,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
+      { "id": 4, "name": "Beetroot", "price": 18, "categoryId": 2, "stock": 80 ,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
+      { "id": 5, "name": "Tomato", "price": 22, "categoryId": 3, "stock": 90,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!" },
+      { "id": 6, "name": "Cucumber", "price": 19, "categoryId": 3, "stock": 75,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!" }
+    ],
+
+    "gallery":[
+      {"id": 1,"image":""}
+    ],
+
+    "user":[
+      {"id":1, "uname":"ishan", "password":""}
+    ]
+  }
+  

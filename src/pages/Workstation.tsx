@@ -1,8 +1,37 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IoClose } from 'react-icons/io5';
 import Button from '../components/Button';
+import axios from 'axios';
 
 const Workstation = () => {
+  const [veggies, setVeggies] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+    // Fetch all vegetables
+    useEffect(() => {
+      axios.get('http://localhost:3001/vegetables')
+        .then(response => {
+          setVeggies(response.data);  // Store the vegetable data
+          setLoading(false);  // Set loading to false once the data is fetched
+        })
+        .catch(error => {
+          console.error("There was an error fetching vegetables:", error);
+          setLoading(false);
+        });
+    }, []);  // Empty array means this runs only once when the component mounts
+  
+    // Fetch all categories
+    useEffect(() => {
+      axios.get('http://localhost:3001/categories')
+        .then(response => {
+          setCategories(response.data); 
+          console.log(response.data) // Store the category data
+        })
+        .catch(error => {
+          console.error("There was an error fetching categories:", error);
+        });
+    }, []); 
+
   // craousel essential;s
   const images = [
     "https://images.pexels.com/photos/1656666/pexels-photo-1656666.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -121,86 +150,6 @@ const Workstation = () => {
 
 
 
-{/* signuppage of krishi yug  */}
-<div
-      ref={modal}
-      onClick={close}
-      className="fixed inset-0 bg-opacity-50 backdrop-blur-2xl flex flex-col justify-center items-center z-50"
-    >
-      <div className="relative">
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            
-          }}
-          className="absolute top-20 z-10 right-0 text-xl border-2 rounded-full cursor-pointer"
-        >
-          <IoClose />
-        </button>
-
-        <form
-          onSubmit={handleSubmit}
-          className="relative w-100 h-150 p-6 rounded-lg shadow-lg mx-auto mt-20 flex flex-col justify-evenly bg-gray-100 bg-opacity-50"
-        >
-          <div className="self-center">
-            <h1 className="font-bold text-3xl">Sign Up</h1>
-          </div>
-
-          <div>
-            <label className="block font-medium text-gray-700 ml-2">Username:</label>
-            <input
-              type="text"
-              name="username"
-              placeholder="Username here"
-              value={formData.username}
-              onChange={handleChange}
-              className="border-b-2 bg-gray-200 outline-none w-full p-2"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block font-medium text-gray-700 ml-2">Email:</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email here"
-              value={formData.email}
-              onChange={handleChange}
-              className="border-b-2 bg-gray-200 outline-none w-full p-2"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block font-medium text-gray-700 ml-2">Password:</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password here"
-              value={formData.password}
-              onChange={handleChange}
-              className="border-b-2 bg-gray-200 outline-none w-full p-2"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block font-medium text-gray-700 ml-2">Confirm Password:</label>
-            <input
-              type="password"
-              name="confirmPassword"
-              placeholder="Re-enter password"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              className="border-b-2 bg-gray-200 outline-none w-full p-2"
-              required
-            />
-          </div>
-<Button>register</Button>
-        </form>
-      </div>
-    </div>
    </>
   )
 }
