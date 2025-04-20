@@ -25,7 +25,7 @@ const Navbar = () => {
         <Link to={"/"}>
           {" "}
           <img
-            className="w-full h-full "
+            className="w-full h-full object-cover"
             alt="image here"
             src="../images/images.png"
           />

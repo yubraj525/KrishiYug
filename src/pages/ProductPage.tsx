@@ -1,8 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductCard from '../components/ProductCard'
 import Herosection from '../components/Herosection'
+import axios from 'axios';
 
+interface veggies {
+  id: number;
+  name: string;
+  price: number;
+  categoryId: number;
+  stock: number;
+  description: string;
+  image?: string;
+}
 const ProductPage = () => {
+  //  as we have describe what data are coming in usestate
+  const [veggies, setVeggies] = useState<veggies[]>([]);
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/vegetables")
+      .then((response) => {
+        setVeggies(response.data); // Store the vegetable data
+        setLoading(false); // Set loading to false once the data is fetched
+      })
+      .catch((error) => {
+        console.error("There was an error fetching vegetables:", error);
+        setLoading(false);
+      });
+      }, []);
   return (
     <div>
    <Herosection
@@ -27,32 +53,16 @@ const ProductPage = () => {
        <button >Search</button>
     </div>
 </div>
-<div className='w-full grid grid-cols-5 p-15 place-items-center'>
-  <ProductCard
-            name="heroshoe"
-            description={"here you can do something"}
-            price={"76$"}
+<div className='w-full grid grid-cols-6 p-15 place-items-center gap-5'>
+      {veggies.map((veg) => (
+            <ProductCard
+              key={veg.id}
+              name={veg.name}
+              description={veg.description}
+              price={veg.price}
+              image={veg.image}
             />
-              <ProductCard
-            name="heroshoe"
-            description={"here you can do something"}
-            price={"76$"}
-            />
-              <ProductCard
-            name="heroshoe"
-            description={"here you can do something"}
-            price={"76$"}
-            />
-              <ProductCard
-            name="heroshoe"
-            description={"here you can do something"}
-            price={"76$"}
-            />
-              <ProductCard
-            name="heroshoe"
-            description={"here you can do something"}
-            price={"76$"}
-            />
+          ))}
             
 </div>
             </div>

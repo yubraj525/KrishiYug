@@ -5,19 +5,21 @@
       { "id": 3, "name": "Fruits" }
     ],
     "vegetables": [
-      { "id": 1, "name": "Spinach", "price": 20, "categoryId": 1, "stock": 50 , "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" ,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
-      { "id": 2, "name": "Lettuce", "price": 25, "categoryId": 1, "stock": 30 , "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
-      { "id": 3, "name": "Carrot", "price": 15, "categoryId": 2, "stock": 100 , "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
-      { "id": 4, "name": "Beetroot", "price": 18, "categoryId": 2, "stock": 80 , "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!"},
-      { "id": 5, "name": "Tomato", "price": 22, "categoryId": 3, "stock": 90 , "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!" },
-      { "id": 6, "name": "Cucumber", "price": 19, "categoryId": 3, "stock": 75 , "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, nostrum et dolore rerum ut quod!" }
+      { "id": 1, "name": "Cauli", "price": 20, "categoryId": 1, "stock": 50 , "image":"src/assets/cauli.avif" ,"description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio!"},
+      { "id": 2, "name": "Carrrot", "price": 25, "categoryId": 1, "stock": 30 , "image":"src/assets/carrot.avif","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio !"},
+      { "id": 3, "name": "Capcicum", "price": 15, "categoryId": 2, "stock": 100 , "image":"src/assets/capcicum.avif","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio !"},
+      { "id": 4, "name": "Tomato", "price": 18, "categoryId": 2, "stock": 80 , "image":"src/assets/tomato.avif","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio !"},
+      { "id": 5, "name": "Onion", "price": 22, "categoryId": 3, "stock": 90 , "image":"src/assets/onion.avif","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio,!" },
+      { "id": 6, "name": "Cucumber", "price": 19, "categoryId": 3, "stock": 75 , "image":"src/assets/cucumber.avif","description":"  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio !" }
     ],
 
     "gallery":[
       {"id": 1, "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-      {"id": 4, "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-      {"id": 2, "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-      {"id": 3, "image":"https://plus.unsplash.com/premium_photo-1722073663754-c47eff499093?q=80&w=2079&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
+      {"id": 4, "image":"src/assets/veg-1.avif"},
+      {"id": 2, "image":"src/assets/veg-3.avif"},
+      {"id": 3, "image":"src/assets/veg-4.avif"},
+      {"id": 5, "image":"src/assets/veg-2.avif"},
+      {"id": 6, "image":"src/assets/veg-5.avif"}
     ],
 
     "user":[

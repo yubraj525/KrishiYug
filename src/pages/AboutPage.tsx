@@ -1,16 +1,26 @@
 import React from "react";
 import Herosection from "../components/Herosection";
 import Team from "../components/Team";
+interface forFeedback{
+  image?:string;
+}
+const team=[
+  "src/assets/user-1.avif" ,
+  "src/assets/user-6.avif",
+  "src/assets/user-2.avif" ,
+  "src/assets/user-7.avif" ,
+]
 
-const Feedback = () => {
+
+const Feedback: React.FC<forFeedback> = ({image}) => {
   return (
     <>
       <div className="  flex flex-col w-110  bg-white  rounded-xl shadow-2xl p-5 gap-5 ">
         <div className="flex items-center w-full  gap-5">
           <div className="w-20 h-20">
             <img
-              className="bg-white w-full h-full rounded-full"
-              src="../images/images (2).png"
+              className="bg-white w-full h-full rounded-full object-cover"
+              src={image}
               alt="image here"
             />
           </div>
@@ -107,9 +117,14 @@ const AboutPage = () => {
           <div className="w-full space-y-4 mt-4 mb-4">
             <h1 className="font-bold text-3xl text-center">Our Team</h1>
             <div className=" w-full grid grid-flow-col  place-items-center ">
-              <Team />
-              <Team />
-              <Team />
+        {
+          team.map((img,index)=>{
+            return(
+              <Team  key={index} image={img}></Team>
+            )
+          })
+          
+        }
             </div>
           </div>
         </div>
