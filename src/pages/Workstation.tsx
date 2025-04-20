@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import { IoClose } from 'react-icons/io5';
 import Button from '../components/Button';
 import axios from 'axios';
+import GalleryCard from '../components/GalleryCard';
+
 
 const Workstation = () => {
   const [veggies, setVeggies] = useState([]);
@@ -149,6 +151,9 @@ const Workstation = () => {
 
 
 
+{/* image card for gallery */}
+<GalleryCard image='src\assets\videos\aboutpic-3.jpeg' ></GalleryCard>
+<GalleryCard image='src\assets\choosingpic.jpeg' ></GalleryCard>
 
    </>
   )

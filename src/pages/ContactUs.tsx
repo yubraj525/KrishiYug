@@ -16,7 +16,7 @@ const ContactUs = () => {
           }
         />
         <div className=" flex w-full h-auto bg-white items-center justify-center p-2 m-5 gap-5">
-          <div className="w-1/2 h-100 bg-green-400 overflow-hidden ">
+          <div className="w-1/2 h-100  overflow-hidden ">
             <video autoPlay loop muted className="background-video w-full flex items-center">
               <source src="src\assets\videos\office.mp4" type="video/mp4" />
               Your browser does not support the video tag.

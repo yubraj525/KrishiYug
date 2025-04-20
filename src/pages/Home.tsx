@@ -3,10 +3,15 @@ import axios from "axios";
 import { Link } from "react-router";
 import ProductCard from "../components/ProductCard";
 import Team from "../components/Team";
+import GalleryCard from "../components/GalleryCard";
 // import LoginPage from "../components/LoginPage";
 
 
 // declaration of structure  as we are using ts
+interface gallery{
+  id:number;
+  image?:string;
+}
 interface veggies {
   id: number;
   name: string;
@@ -20,12 +25,24 @@ interface veggies {
 const Home: React.FC= () => {
   //  as we have describe what data are coming in usestate 
   const [veggies, setVeggies] = useState<veggies[]>([]);   
+  const [gallery, setGallery] = useState<gallery[]>([]);   
      const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/vegetables')
+    axios.get('http://localhost:3000/vegetables')
       .then(response => {
         setVeggies(response.data);  // Store the vegetable data
+        setLoading(false);  // Set loading to false once the data is fetched
+      })
+      .catch(error => {
+        console.error("There was an error fetching vegetables:", error);
+        setLoading(false);
+      });
+
+      // fetching  images with id from api
+      axios.get('http://localhost:3000/gallery')
+      .then(response => {
+        setGallery(response.data);  // Store the vegetable data
         setLoading(false);  // Set loading to false once the data is fetched
       })
       .catch(error => {
@@ -170,32 +187,18 @@ const Home: React.FC= () => {
           </div>
         </div>
       </div>
-      <div className="w-full grid place-items-center  grid-cols-5 p-5 ">
-        {/* <ProductCard
-          name="heroshoe"
-          description={"here you can do something"}
-          price={"76$"}
-        />
-        <ProductCard
-          name="heroshoe"
-          description={"here you can do something"}
-          price={"76$"}
-        />
-        <ProductCard
-          name="heroshoe"
-          description={"here you can do something"}
-          price={"76$"}
-        />
-        <ProductCard
-          name="heroshoe"
-          description={"here you can do something"}
-          price={"76$"}
-        />
-        <ProductCard
-          name="heroshoe"
-          description={"here you can do something"}
-          price={"76$"}
-        /> */}
+      <div className="w-full grid  grid-cols-4 p-5 gap-15 place-items-center ">
+     
+      {gallery.slice(0,4).map((gall) => (
+  <GalleryCard
+    key={gall.id}
+ 
+    image={gall.image}
+
+  />
+))}
+
+
       </div>
       <div className="  w-full h-full space-y-2.5 bg-gray-100  p-5 flex items-center flex-col">
         <div className="w-1/2 flex flex-col gap-5">
